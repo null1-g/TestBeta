@@ -1,0 +1,5 @@
+SHA-256 checksums for TestBeta-Windows-1.0.0
+
+bdbd699464ab4197c49bbad44119e02706ed69f998e3349be8012f7fad5610af *README.txt
+00d17e476e0f5921a9f9fa5e576d4926064ecab0fe2fd519910b6df36c8167dc *TestBetaApp-1.0.0.exe
+dffe847e3f9ef8934f18de4b6549176256f88c37f72ddcb1504ca007e939f193 *TestBetaSetup-1.0.0.exe

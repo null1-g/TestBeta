@@ -1,0 +1,295 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background:
+    radial-gradient(circle at top, rgba(180, 87, 32, 0.22), transparent 30%),
+    linear-gradient(180deg, #23170f 0%, #120f0c 100%);
+  color: #f6e7d0;
+  font-family: Georgia, "Trebuchet MS", serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+.app-shell {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+#gameCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.overlay,
+.hud,
+.message-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.overlay {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: radial-gradient(circle at center, rgba(25, 18, 15, 0.72), rgba(7, 6, 5, 0.94));
+}
+
+.overlay-visible {
+  display: flex;
+}
+
+.title-card {
+  width: 100%;
+  max-width: 760px;
+  padding: 32px;
+  border: 1px solid rgba(255, 166, 84, 0.35);
+  background: linear-gradient(180deg, rgba(37, 27, 22, 0.95), rgba(18, 15, 13, 0.95));
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+}
+
+.eyebrow,
+.hud-label,
+.feature-label {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: #d1b18d;
+  font-size: 12px;
+}
+
+.title-card h1 {
+  margin: 10px 0 12px;
+  font-size: 84px;
+  line-height: 0.95;
+  font-weight: 700;
+}
+
+.pitch {
+  max-width: 640px;
+  color: #eed8bb;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.feature-grid {
+  margin: 24px 0 18px;
+  font-size: 0;
+}
+
+.feature-grid:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.feature-grid .feature-box {
+  float: left;
+  width: 32%;
+  margin-right: 2%;
+  font-size: 16px;
+}
+
+.feature-grid .feature-box:last-child {
+  margin-right: 0;
+}
+
+.feature-box,
+.controls-box,
+.status-panel,
+.readout,
+.brand-block,
+.objective-block {
+  border: 1px solid rgba(255, 166, 84, 0.35);
+  background: rgba(27, 21, 17, 0.88);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.feature-box {
+  padding: 16px;
+}
+
+.feature-box strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+.controls-box {
+  margin-bottom: 24px;
+  padding: 16px;
+}
+
+.controls-box p {
+  overflow: hidden;
+  margin: 10px 0 0;
+  color: #f4e3cc;
+}
+
+.controls-box span {
+  float: left;
+}
+
+.controls-box strong {
+  float: right;
+}
+
+.primary-button {
+  border: 0;
+  padding: 16px 24px;
+  background: linear-gradient(180deg, #ff9f52, #e0622f);
+  color: #25160c;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 12px 24px rgba(224, 98, 47, 0.35);
+}
+
+.hud {
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 18px;
+}
+
+.hidden {
+  display: none;
+}
+
+.hud-top,
+.hud-bottom {
+  display: flex;
+}
+
+.brand-block {
+  min-width: 180px;
+  padding: 12px 14px;
+  margin-right: 14px;
+}
+
+.objective-block {
+  flex: 1;
+  padding: 12px 14px;
+}
+
+.status-panel {
+  align-self: flex-start;
+  width: 360px;
+  max-width: calc(100vw - 36px);
+  padding: 14px;
+}
+
+.meter + .meter {
+  margin-top: 12px;
+}
+
+.meter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  color: #f2dfc4;
+}
+
+.meter-track {
+  height: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  width: 0%;
+}
+
+.meter-hull {
+  background: linear-gradient(90deg, #ff6d57, #ff9d57);
+}
+
+.meter-fuel {
+  background: linear-gradient(90deg, #d69f28, #ffd561);
+}
+
+.meter-heat {
+  background: linear-gradient(90deg, #ff7b54, #ff4f35);
+}
+
+.hud-bottom {
+  align-items: flex-end;
+}
+
+.readout {
+  padding: 12px 14px;
+  min-width: 160px;
+  margin-right: 14px;
+}
+
+.readout:last-child {
+  margin-right: 0;
+}
+
+.readout strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 20px;
+}
+
+#statusText {
+  font-size: 18px;
+}
+
+.message-overlay {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 24px;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  color: #f6e7d0;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.55);
+}
+
+.message-overlay.hidden {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .title-card h1 {
+    font-size: 58px;
+  }
+
+  .feature-grid .feature-box {
+    float: none;
+    width: auto;
+    margin-right: 0;
+    margin-bottom: 14px;
+  }
+
+  .hud-top,
+  .hud-bottom {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .status-panel {
+    width: 100%;
+    max-width: none;
+  }
+
+  .readout {
+    min-width: 0;
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+}

@@ -1,0 +1,8 @@
+SHA-256 checksums for TestBeta-Windows-1.0.0
+
+9de8047f3def3d69f203e3398f94a59121d41e3c5a666bba9fe9dbbdce150d69 *TestBeta-Windows-1.0.0.zip
+
+Included release folder files:
+bdbd699464ab4197c49bbad44119e02706ed69f998e3349be8012f7fad5610af *README.txt
+00d17e476e0f5921a9f9fa5e576d4926064ecab0fe2fd519910b6df36c8167dc *TestBetaApp-1.0.0.exe
+dffe847e3f9ef8934f18de4b6549176256f88c37f72ddcb1504ca007e939f193 *TestBetaSetup-1.0.0.exe

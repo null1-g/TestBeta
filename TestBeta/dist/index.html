@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Beta</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <canvas id="gameCanvas" width="1280" height="720"></canvas>
+
+    <div id="titleScreen" class="overlay overlay-visible">
+      <div class="title-card">
+        <p class="eyebrow">Rust District Courier Trial</p>
+        <h1>Test Beta</h1>
+        <p class="pitch">
+          Salvage what you can, keep your rig running, and punch out before the district eats your fuel.
+        </p>
+
+        <div class="feature-grid">
+          <div class="feature-box">
+            <span class="feature-label">Mode</span>
+            <strong>Low-Spec FPS</strong>
+          </div>
+          <div class="feature-box">
+            <span class="feature-label">Run Goal</span>
+            <strong>Secure 3 Cores</strong>
+          </div>
+          <div class="feature-box">
+            <span class="feature-label">Risk</span>
+            <strong>Drones + Fuel Drain</strong>
+          </div>
+        </div>
+
+        <div class="controls-box">
+          <span class="feature-label">Controls</span>
+          <p><span>Move</span><strong>WASD</strong></p>
+          <p><span>Look</span><strong>Mouse / Q / E</strong></p>
+          <p><span>Fire</span><strong>Space / Click</strong></p>
+          <p><span>Display</span><strong>Click + F</strong></p>
+          <p><span>Tune Aim</span><strong>[ / ]</strong></p>
+          <p><span>Restart Run</span><strong>R</strong></p>
+        </div>
+
+        <button id="startButton" class="primary-button">Start Run</button>
+      </div>
+    </div>
+
+    <div id="hud" class="hud hidden">
+      <div class="hud-top">
+        <div class="brand-block">
+          <span class="hud-label">Courier Rig</span>
+          <strong>Test Beta</strong>
+        </div>
+        <div class="objective-block">
+          <span class="hud-label">Objective</span>
+          <strong id="objectiveText">Collect reactor cores and reach extraction.</strong>
+        </div>
+      </div>
+
+      <div class="status-panel">
+        <div class="meter">
+          <div class="meter-header">
+            <span>Hull</span>
+            <strong id="hullText">100%</strong>
+          </div>
+          <div class="meter-track"><div id="hullBar" class="meter-fill meter-hull"></div></div>
+        </div>
+        <div class="meter">
+          <div class="meter-header">
+            <span>Fuel</span>
+            <strong id="fuelText">100%</strong>
+          </div>
+          <div class="meter-track"><div id="fuelBar" class="meter-fill meter-fuel"></div></div>
+        </div>
+        <div class="meter">
+          <div class="meter-header">
+            <span>Heat</span>
+            <strong id="heatText">0%</strong>
+          </div>
+          <div class="meter-track"><div id="heatBar" class="meter-fill meter-heat"></div></div>
+        </div>
+      </div>
+
+      <div class="hud-bottom">
+        <div class="readout">
+          <span class="hud-label">Cores</span>
+          <strong id="scrapText">0 / 3</strong>
+        </div>
+        <div class="readout">
+          <span class="hud-label">Distance</span>
+          <strong id="distanceText">0 m</strong>
+        </div>
+        <div class="readout">
+          <span class="hud-label">Status</span>
+          <strong id="statusText">Leaving garage...</strong>
+        </div>
+      </div>
+    </div>
+
+    <div id="messageOverlay" class="message-overlay hidden"></div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

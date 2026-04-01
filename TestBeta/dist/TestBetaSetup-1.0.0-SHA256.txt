@@ -1,0 +1,3 @@
+SHA-256 checksum for TestBetaSetup-1.0.0.exe
+
+dffe847e3f9ef8934f18de4b6549176256f88c37f72ddcb1504ca007e939f193 *TestBetaSetup-1.0.0.exe
